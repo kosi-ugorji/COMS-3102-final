@@ -1,2 +1,3 @@
-# COMS3102-keeper-app
-Midterm project for COMS3102 class
+# COMS-3102-final
+Final Project for COMS3102 class
+
