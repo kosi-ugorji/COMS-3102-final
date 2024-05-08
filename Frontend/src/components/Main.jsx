@@ -18,7 +18,7 @@ function Main() {
 
   useEffect(() => {
     const fetchNotes = async () => {
-      const response = await fetch('http://localhost:5010/api/')
+      const response = await fetch(process.env.API_BASE_URL)
       const json = await response.json()
 
       if (response.ok){
@@ -54,7 +54,7 @@ function Main() {
   }
 
   async function deleteNote(id) {
-    const response = await fetch('http://localhost:5010/api/'+id, {
+    const response = await fetch(process.env.API_BASE_URL+id, {
       method: 'DELETE'
     })
     //setNotes(notes.filter((note) => note.key !== id));
@@ -92,7 +92,7 @@ function Main() {
 
     const note = {...newNote}
 
-    const response = await fetch('http://localhost:5010/api/', {
+    const response = await fetch(process.env.API_BASE_URL, {
       method: 'POST',
       body: JSON.stringify(note),
       headers:{

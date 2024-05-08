@@ -24,7 +24,7 @@ app.use((req, ers, next) =>{
 
 app.use('/api', notesRoutes)
 
-mongoose.connect("mongodb+srv://ireneugorji78:Secured@cluster0.3gevr3v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   app.listen(5010, () => {console.log("Connected to db and listening on port", process.env.PORT)})
 })
