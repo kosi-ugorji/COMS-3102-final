@@ -3,9 +3,35 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
+
+html, body {
+  height: 100%; /* Ensures that the HTML and body tags take full height */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Ensures that content flows vertically */
+}
+
+footer {
+  text-align: center;
+  width: 100%;
+  height: 2.5rem;
+}
+
+
 body {
   background: #eee;
   padding: 0 16px;
@@ -24,17 +50,7 @@ header h1 {
   font-weight: 200;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
 
-footer p {
-  color: #ccc;
-}
 
 form {
   position: relative;
@@ -73,23 +89,33 @@ form button {
 }
 
 .note {
+  position: relative;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
+  width: 260px;
   margin: 16px;
   float: left;
 }
+
 .note h1 {
   font-size: 1.1em;
+  width: 230px;
   margin-bottom: 6px;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
+
 .note p {
   font-size: 1.1em;
+  width: 230px;
   margin-bottom: 10px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  outline: none;
+  box-shadow: none;
+  /* white-space: pre-wrap;
+  word-wrap: break-word; */
 }
 
 .note button {
@@ -98,7 +124,7 @@ form button {
   margin-right: 10px;
   color: #f5ba13;
   border: none;
-  width: 36px;
+  width: 60px;
   height: 36px;
   cursor: pointer;
   outline: none;
