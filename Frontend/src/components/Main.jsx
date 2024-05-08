@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useState } from "react";
+import React, {useEffect, useState } from "react";
 import Note from "./Note";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -18,7 +18,7 @@ function Main() {
 
   useEffect(() => {
     const fetchNotes = async () => {
-      const response = await fetch(process.env.API_BASE_URL)
+      const response = await fetch('http://localhost:5010/api/')
       const json = await response.json()
 
       if (response.ok){
@@ -46,15 +46,8 @@ function Main() {
     setNewNote((prevNote) => ({ ...prevNote, [name]: value }));
   }
 
-  function addNote(event) {
-    event.preventDefault();
-    const nextId = notes.length + 1;
-    setNotes([...notes, { key: nextId, ...newNote }]);
-    setNewNote({ title: "", content: "" }); // To remove text from input
-  }
-
   async function deleteNote(id) {
-    const response = await fetch(process.env.API_BASE_URL+id, {
+    const response = await fetch('http://localhost:5010/api/'+id, {
       method: 'DELETE'
     })
     //setNotes(notes.filter((note) => note.key !== id));
@@ -66,6 +59,7 @@ function Main() {
     if (!response.ok){
       console.log("Error in delete")
       setError(json.error)
+      console.log(error)
     }
 
     if (response.ok){
@@ -92,7 +86,7 @@ function Main() {
 
     const note = {...newNote}
 
-    const response = await fetch(process.env.API_BASE_URL, {
+    const response = await fetch('http://localhost:5010/api/', {
       method: 'POST',
       body: JSON.stringify(note),
       headers:{
@@ -117,8 +111,9 @@ function Main() {
   }
 
   return (
-    <div className="main-content">
+    <div >
       <Header />
+      <div className="main-content"> 
       <div>
         <form onSubmit={handleSubmit}>
           <input
@@ -136,7 +131,8 @@ function Main() {
           <button>Add</button>
         </form>
       </div>
-      <div>{notes.map(createNote)}</div>
+      <div >{notes.map(createNote)}</div>
+      </div>
       <Footer />
     </div>
   );
