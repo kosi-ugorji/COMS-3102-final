@@ -1,13 +1,20 @@
 # NoteNest: Community Note Keeping App
+<p align="center">
+   <img width="550" alt="image" src="https://github.com/kosi-ugorji/COMS-3102-final/assets/85312999/6404e7fc-0ad1-4eb6-b8de-03869a3c5df5">
+</p>
 
 ## Introduction
 Welcome to **NoteNest**, the community note keeping application developed as the final project for COMS3102. NoteNest allows users to easily store, view, and manage their notes online with a simple and intuitive interface.
+
+### Video Demo - https://drive.google.com/file/d/1L9hzwkZRnwkEsyptjV6_XybJo6FZ9zGr/view?usp=sharing
+
 
 ### Features
 - **Create Notes**: Users can add new notes using a simple form.
 - **View Notes**: All notes are retrievable and displayed for easy access.
 - **Delete Notes**: Users can remove notes they no longer need.
 - **Secure**: Each note is stored securely in the backend database.
+
 
 ## Installation and Setup
 
