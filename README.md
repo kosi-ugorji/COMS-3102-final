@@ -37,19 +37,24 @@ Follow these steps to get NoteNest running on your local machine:
     - In the first terminal:
     ```bash
     cd Backend
-    - In the second terminal:
+    ```
+   - In the second terminal:
     ```bash
     cd Frontend
+    ```
 5. **Install required packages in both directories**
     ```bash
     npm install
+    ```
 6. ***Start the application servers***
-    -In the Backend terminal:
+    - In the Backend terminal:
     ```bash
     npm run dev
-    -In the Frontend terminal:
+    ```
+    - In the Frontend terminal:
     ```bash
     npm start
+    ```
 
 ### Usage
 After starting the application, navigate to http://localhost:3000 on your web browser to start using NoteNest. Simply enter your note in the form and submit it to see it appear on your dashboard.
